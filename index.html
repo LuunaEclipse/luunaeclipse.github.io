@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id = "theme1" rel="stylesheet" href="index.css">
-    <link id = "theme" rel="stylesheet" href="index.css">
+    <link id="style" rel="stylesheet" href="index.css">
+    <link id="theme" rel="stylesheet" href="index.css">
     <title>SZLG Bulvár</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="parallax">
     <header>
         <div class="spacer"></div>
@@ -24,7 +29,7 @@
     <main>
         <section class="container">
             <a href="https://www.youtube.com/watch?v=JALbemLw3G4">
-                <article class = "box" id="im1">
+                <article class="box" id="im1">
                     <h3>Lehet nem jár VILLAMOS az iskolához?</h3>
                 </article>
             </a>
@@ -48,25 +53,73 @@
         <br><span id="co2">Discord:</span> luunaeclipse
     </footer>
     <div id="mySidenav" class="sidenav">
-        <a onclick="toggleTheme()" href=#>Téma</a>
-        <a href="#">Github</a>
-        <a href="#">Lol</a>
-        <a href="#">Rakjak</a>
-      </div>
+        <div id="randomid">
+            <a id="inline" onclick="toggleTheme()" href=#>Téma</a>
+            <a id="inline" href="#">Github</a>
+            <a id="inline" href="#">Lol</a>
+            <a id="inline" href="#">Rakjak</a>
+        </div>
+    </div>
 
     <script>
+        // TOUCHSCREEN DETECTION
+        function TouchDetect() {
+            var hasTouchScreen = false;
+
+            if ("maxTouchPoints" in navigator) {
+                hasTouchScreen = navigator.maxTouchPoints > 1;
+            } else if ("msMaxTouchPoints" in navigator) {
+                hasTouchScreen = navigator.msMaxTouchPoints > 1;
+            } else {
+                var mQ = window.matchMedia && matchMedia("(pointer:coarse)");
+                if (mQ && mQ.media === "(pointer:coarse)") {
+                    hasTouchScreen = !!mQ.matches;
+                } else if ('orientation' in window) {
+                    hasTouchScreen = true; // deprecated, but good fallback
+                } else {
+                    // Only as a last resort, fall back to user agent sniffing
+                    var UA = navigator.userAgent;
+                    hasTouchScreen = (
+                        /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(UA) ||
+                        /\b(Android|Windows Phone|iPad|iPod)\b/i.test(UA)
+                    );
+                }
+            }
+
+            return hasTouchScreen;
+        }
+
+        let hasTouchScreen = TouchDetect();
+
+        let temp = document.getElementById('style');
+
+        if (hasTouchScreen) {
+            temp.setAttribute('href', 'touch.css');
+        }
+        else {
+            temp.setAttribute('href', 'index.css');
+        }
+
         function Click(x) {
-          x.classList.toggle("change");
+            x.classList.toggle("change");
         }
 
         let bool = false;
 
-        /* Set the width of the side navigation to 250px */
         function toggleNav() {
-            if(bool){
-                document.getElementById("mySidenav").style.width = "0";
-            }else{
-                document.getElementById("mySidenav").style.width = "250px";
+            if (hasTouchScreen) {
+                if (bool) {
+                    document.getElementById("mySidenav").style.width = "0";
+                } else {
+                    document.getElementById("mySidenav").style.height = "100px";
+                }
+            }
+            else {
+                if (bool) {
+                    document.getElementById("mySidenav").style.width = "0";
+                } else {
+                    document.getElementById("mySidenav").style.width = "250px";
+                }
             }
             bool = !bool;
         }
@@ -74,17 +127,23 @@
         changeButton.addEventListener('click', switchTheme);
 
         function toggleTheme() {
-            // Select the <link> element
             let theme = document.getElementById('theme');
-
-            // Toggle between light.css and dark.css
-            if (theme.getAttribute('href') == 'light.css') {
-                theme.setAttribute('href', 'index.css');
-            } else {
-                theme.setAttribute('href', 'light.css');
+            if (hasTouchScreen) {
+                if (theme.getAttribute('href') == 'light.css') {
+                    theme.setAttribute('href', 'touch.css');
+                } else {
+                    theme.setAttribute('href', 'light.css');
+                }
+            }
+            else {
+                if (theme.getAttribute('href') == 'light.css') {
+                    theme.setAttribute('href', 'index.css');
+                } else {
+                    theme.setAttribute('href', 'light.css');
+                }
             }
         }
-        </script>
-
+    </script>
 </body>
+
 </html>
