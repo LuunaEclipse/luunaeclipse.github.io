@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id = "theme1" rel="stylesheet" href="index.css">
+    <link id = "theme" rel="stylesheet" href="index.css">
+    <title>SZLG Bulvár</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="parallax">
+    <header>
+        <div class="spacer"></div>
+        <h1><span id="titlestyle">SZLG</span> bulvár</h1>
+        <div class="menubutton" onclick="Click(this);toggleNav()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <a href="https://www.youtube.com/watch?v=JALbemLw3G4">
+                <article class = "box" id="im1">
+                    <h3>Lehet nem jár VILLAMOS az iskolához?</h3>
+                </article>
+            </a>
+            <article class="box" id="im2">
+                <h3>Karácsony Gergely közzé tette az iskola tartalmát!</h3>
+            </article>
+            <article class="box">
+                <h3>ELLOPTÁK a székeket a II.44-ből!!$!</h3>
+            </article>
+            <article class="box">
+                <h3>Nyulak terrorizálják az E-seket!</h3>
+            </article>
+        </section>
+
+    </main>
+    <br>
+    <hr>
+    <footer>
+        <span id="co1">Contacts:</span>
+        <br><span id="co2">E-mail:</span> lele28188@gmail.com
+        <br><span id="co2">Discord:</span> luunaeclipse
+    </footer>
+    <div id="mySidenav" class="sidenav">
+        <a onclick="toggleTheme()" href=#>Téma</a>
+        <a href="#">Github</a>
+        <a href="#">Lol</a>
+        <a href="#">Rakjak</a>
+      </div>
+
+    <script>
+        function Click(x) {
+          x.classList.toggle("change");
+        }
+
+        let bool = false;
+
+        /* Set the width of the side navigation to 250px */
+        function toggleNav() {
+            if(bool){
+                document.getElementById("mySidenav").style.width = "0";
+            }else{
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+            bool = !bool;
+        }
+        let changeButton = document.querySelector(".change_theme");
+        changeButton.addEventListener('click', switchTheme);
+
+        function toggleTheme() {
+            // Select the <link> element
+            let theme = document.getElementById('theme');
+
+            // Toggle between light.css and dark.css
+            if (theme.getAttribute('href') == 'light.css') {
+                theme.setAttribute('href', 'index.css');
+            } else {
+                theme.setAttribute('href', 'light.css');
+            }
+        }
+        </script>
+
+</body>
+</html>
