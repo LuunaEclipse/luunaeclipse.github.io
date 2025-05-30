@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="style" rel="stylesheet" href="index.css">
-    <link id="theme" rel="stylesheet" href="index.css">
+    <link id="theme" rel="stylesheet" href="dark.css">
     <title>SZLG Bulvár</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,7 +82,7 @@
         function toggleNav() {
             if ((/Android|iPhone/i.test(navigator.userAgent))) {
                 if (bool) {
-                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("mySidenav").style.height = "0";
                 } else {
                     document.getElementById("mySidenav").style.height = "100px";
                 }
@@ -101,19 +101,10 @@
 
         function toggleTheme() {
             let theme = document.getElementById('theme');
-            if ((/Android|iPhone/i.test(navigator.userAgent))) {
-                if (theme.getAttribute('href') == 'light.css') {
-                    theme.setAttribute('href', 'touch.css');
-                } else {
-                    theme.setAttribute('href', 'light.css');
-                }
-            }
-            else {
-                if (theme.getAttribute('href') == 'light.css') {
-                    theme.setAttribute('href', 'index.css');
-                } else {
-                    theme.setAttribute('href', 'light.css');
-                }
+            if (theme.getAttribute('href') == 'light.css') {
+                theme.setAttribute('href', 'dark.css');
+            } else {
+                theme.setAttribute('href', 'light.css');
             }
         }
     </script>

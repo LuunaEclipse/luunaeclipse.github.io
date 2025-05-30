@@ -1,0 +1,42 @@
+footer{
+    color: rgb(255, 255, 255);
+}
+
+header {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(20, 20, 20);
+    color: rgb(255, 255, 255);
+}
+
+.box {
+    opacity: 0.7;
+    font-size: 16px;
+    transition: all, 0.2s;
+}
+
+.parallax {
+    background-image: linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.9)), url('szent_laszo.JPG');
+}
+
+body {
+    color: rgb(255, 255, 255);
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    background-color: rgb(255, 255, 255);
+}
+
+.sidenav {
+    color: rgb(255, 255, 255);
+    background-color: rgba(20, 20, 20);
+}
+
+.sidenav a {
+    color: rgb(255, 255, 255);
+}
+
+.sidenav a:hover {
+    color: rgb(255, 255, 255);
+}
