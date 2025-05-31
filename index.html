@@ -18,7 +18,7 @@
 
 <body class="parallax">
     <header>
-        <div class="spacer"></div>
+        <div id="spacer"></div>
         <h1><span id="titlestyle">SZLG</span> bulvár</h1>
         <div class="menubutton" onclick="Click(this);toggleNav()">
             <div class="bar1"></div>
@@ -65,8 +65,10 @@
         // TOUCHSCREEN DETECTION
 
         let temp = document.getElementById('style');
+        let element = document.getElementById("spacer");
 
         if ((/Android|iPhone/i.test(navigator.userAgent))) {
+            element.parentNode.removeChild(element);
             temp.setAttribute('href', 'touch.css');
         }
         else {

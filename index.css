@@ -210,7 +210,7 @@ a {
     transform: translate(0, -11px) rotate(45deg);
 }
 
-.spacer {
+#spacer {
     justify-content: flex-start;
     width: 40px;
     padding-left: 25px;
