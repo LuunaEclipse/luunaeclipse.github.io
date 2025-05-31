@@ -4,7 +4,7 @@
 }
 
 #titlestyle {
-    font-weight: 100;
+    font-weight: 500;
 }
 
 #co1 {
@@ -23,7 +23,7 @@ footer {
 
 h1 {
     font-family: 'Lexend', sans-serif;
-    font-weight: 700;
+    font-weight: 200;
     padding: 0px;
 }
 
@@ -83,28 +83,12 @@ header {
 }
 
 /*ARTICLE HOVERS*/
-
-.box:hover {
-    opacity: 1;
-    transform: scale(1.025);
-}
-
-.box:hover>h3 {
-    text-decoration: none;
-    transform: scale(1.025);
-    transition: all, 0.2s;
-}
-
 .box {
-    opacity: 1;
     font-size: 16px;
-    transition: all, 0.2s;
 }
 
 .box>h3 {
     text-decoration: none;
-    transform: scale(1);
-    transition: all, 0.2s;
 }
 
 body,
@@ -237,15 +221,11 @@ a {
     justify-content: space-evenly;
 }
 
-#inline {
-    display: inline-block;
-}
-
 .sidenav a {
     color: #ffffff;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 5vw;
     opacity: 0.5;
     display: block;
     transition: 0.2s;

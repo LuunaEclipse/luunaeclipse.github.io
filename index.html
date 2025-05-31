@@ -70,7 +70,7 @@
             temp.setAttribute('href', 'touch.css');
         }
         else {
-            temp.setAttribute('href', 'index.css');
+            temp.setAttribute('href', 'touch.css');
         }
 
         function Click(x) {
@@ -80,11 +80,11 @@
         let bool = false;
 
         function toggleNav() {
-            if ((/Android|iPhone/i.test(navigator.userAgent))) {
+            if (true) {
                 if (bool) {
                     document.getElementById("mySidenav").style.height = "0";
                 } else {
-                    document.getElementById("mySidenav").style.height = "100px";
+                    document.getElementById("mySidenav").style.height = "15vw";
                 }
             }
             else {
