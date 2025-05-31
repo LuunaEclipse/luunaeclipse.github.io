@@ -29,9 +29,8 @@
     <div id="mySidenav" class="sidenav">
         <div id="randomid">
             <a id="inline" onclick="toggleTheme()" href=#>Téma</a>
-            <a id="inline" href="#">Github</a>
-            <a id="inline" href="#">Lol</a>
-            <a id="inline" href="#">Rakjak</a>
+            <a id="inline" href="https://github.com/LuunaEclipse/First_Web">Github</a>
+            <a id="inline" onclick="devToggle()" href=#>DevSwitch</a>
         </div>
     </div>
     <main>
@@ -66,13 +65,34 @@
 
         let temp = document.getElementById('style');
         let element = document.getElementById("spacer");
+        let touchB = false;
+
+        if(localStorage.getItem("isLightMode") == "1"){
+                console.log("i hate this");
+                document.getElementById('theme').setAttribute('href', 'light.css');
+            }
 
         if ((/Android|iPhone/i.test(navigator.userAgent))) {
             element.parentNode.removeChild(element);
             temp.setAttribute('href', 'touch.css');
+            touchB = true;
         }
         else {
             temp.setAttribute('href', 'index.css');
+            touchB = false;
+        }
+
+        function devToggle() {
+            let style = document.getElementById('style');
+            if (style.getAttribute('href') == 'index.css') {
+                style.setAttribute('href', 'touch.css');
+                touchB = true;
+                document.getElementById("mySidenav").style.width = "100%";
+            } else {
+                style.setAttribute('href', 'index.css');
+                touchB = false;
+                document.getElementById("mySidenav").style.height = "100%";
+            }
         }
 
         function Click(x) {
@@ -82,7 +102,7 @@
         let bool = false;
 
         function toggleNav() {
-            if ((/Android|iPhone/i.test(navigator.userAgent))) {
+            if (touchB) {
                 if (bool) {
                     document.getElementById("mySidenav").style.height = "0";
                 } else {
@@ -105,8 +125,10 @@
             let theme = document.getElementById('theme');
             if (theme.getAttribute('href') == 'light.css') {
                 theme.setAttribute('href', 'dark.css');
+                localStorage.setItem("isLightMode", "0")
             } else {
                 theme.setAttribute('href', 'light.css');
+                localStorage.setItem("isLightMode", "1")
             }
         }
     </script>

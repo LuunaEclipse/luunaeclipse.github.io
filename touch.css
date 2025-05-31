@@ -41,7 +41,7 @@ header {
     color: rgb(255, 255, 255);
     margin-bottom: 0px;
     margin-top: 0px;
-    padding-left: 25px;
+    padding-left: 50px;
     width: auto;
     height: 90px;
 }
@@ -57,7 +57,7 @@ header {
         grid-gap: 15px;
     }
     h1{
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
@@ -68,7 +68,7 @@ header {
         grid-gap: 15px;
     }
     h1{
-        font-size: 5vw;
+        font-size: 40px;
     }
 }
 

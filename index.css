@@ -28,6 +28,12 @@ h1 {
     padding: 0px;
 }
 
+#spacer {
+    justify-content: flex-start;
+    width: 40px;
+    padding-left: 25px;
+}
+
 header {
     margin-top: 0px;
     position: sticky;
@@ -208,12 +214,6 @@ a {
 /* Rotate last bar */
 .change .bar3 {
     transform: translate(0, -11px) rotate(45deg);
-}
-
-#spacer {
-    justify-content: flex-start;
-    width: 40px;
-    padding-left: 25px;
 }
 
 /*SIDEBAR*/
