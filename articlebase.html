@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="style" rel="stylesheet" href="index.css">
+    <link id="theme" rel="stylesheet" href="dark.css">
+    <title>SZLG Bulvár</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="parallax">
+    <header>
+        <div id="spacer"></div>
+        <h1><span id="titlestyle">SZLG</span> bulvár</h1>
+        <div class="menubutton" onclick="Click(this);toggleNav()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </header>
+    <div id="mySidenav" class="sidenav">
+        <div id="randomid">
+            <a id="inline" onclick="toggleTheme()" href=#>Téma</a>
+            <a id="inline" href="https://github.com/LuunaEclipse/First_Web">Github</a>
+            <a id="inline" onclick="devToggle()" href=#>DevSwitch</a>
+        </div>
+    </div>
+    <main id="article">
+        <h3 id="h3">Lehet, hogy nem jár a villamos az iskolához?</h3>
+        <hr>
+        <p id="p">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat officia sit maxime, dolorum ullam soluta excepturi eius aliquam nihil doloribus perspiciatis unde quia inventore voluptate, dolore vitae, et dolor vel.
+        </p>
+    </main>
+    <br>
+    <hr>
+    <footer>
+        <span id="co1">Contacts:</span>
+        <br><span id="co2">E-mail:</span> lele28188@gmail.com
+        <br><span id="co2">Discord:</span> luunaeclipse
+    </footer>
+
+    <script>
+        // TOUCHSCREEN DETECTION
+
+        let temp = document.getElementById('style');
+        let element = document.getElementById("spacer");
+        let touchB = false;
+
+        if(localStorage.getItem("isLightMode") == "1"){
+                console.log("i hate this");
+                document.getElementById('theme').setAttribute('href', 'light.css');
+            }
+
+        if ((/Android|iPhone/i.test(navigator.userAgent))) {
+            element.parentNode.removeChild(element);
+            temp.setAttribute('href', 'touch.css');
+            touchB = true;
+        }
+        else {
+            temp.setAttribute('href', 'index.css');
+            touchB = false;
+        }
+
+        function devToggle() {
+            let style = document.getElementById('style');
+            if (style.getAttribute('href') == 'index.css') {
+                style.setAttribute('href', 'touch.css');
+                touchB = true;
+                document.getElementById("mySidenav").style.width = "100%";
+            } else {
+                style.setAttribute('href', 'index.css');
+                touchB = false;
+                document.getElementById("mySidenav").style.height = "100%";
+            }
+        }
+
+        function Click(x) {
+            x.classList.toggle("change");
+        }
+
+        let bool = false;
+
+        function toggleNav() {
+            if (touchB) {
+                if (bool) {
+                    document.getElementById("mySidenav").style.height = "0";
+                } else {
+                    document.getElementById("mySidenav").style.height = "15vw";
+                }
+            }
+            else {
+                if (bool) {
+                    document.getElementById("mySidenav").style.width = "0";
+                } else {
+                    document.getElementById("mySidenav").style.width = "250px";
+                }
+            }
+            bool = !bool;
+        }
+        let changeButton = document.querySelector(".change_theme");
+        changeButton.addEventListener('click', switchTheme);
+
+        function toggleTheme() {
+            let theme = document.getElementById('theme');
+            if (theme.getAttribute('href') == 'light.css') {
+                theme.setAttribute('href', 'dark.css');
+                localStorage.setItem("isLightMode", "0")
+            } else {
+                theme.setAttribute('href', 'light.css');
+                localStorage.setItem("isLightMode", "1")
+            }
+        }
+    </script>
+</body>
+
+</html>
