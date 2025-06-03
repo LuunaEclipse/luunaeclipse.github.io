@@ -19,7 +19,7 @@
 <body class="parallax">
     <header>
         <div id="spacer"></div>
-        <h1><span id="titlestyle">SZLG</span> bulvár</h1>
+        <h1><a href="index.html"><span id="titlestyle">SZLG</span> bulvár</a></h1>
         <div class="menubutton" onclick="Click(this);toggleNav()">
             <div class="bar1"></div>
             <div class="bar2"></div>
@@ -33,13 +33,23 @@
             <a id="inline" onclick="devToggle()" href=#>DevSwitch</a>
         </div>
     </div>
-    <main id="article">
-        <h3 id="h3">Lehet, hogy nem jár a villamos az iskolához?</h3>
-        <hr>
-        <p id="p">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat officia sit maxime, dolorum ullam soluta excepturi eius aliquam nihil doloribus perspiciatis unde quia inventore voluptate, dolore vitae, et dolor vel.
-        </p>
-    </main>
+    <div id="artcontainer">
+        <main id="article">
+            <h3 id="h3">Lehet, hogy nem jár a villamos az iskolához?</h3>
+            <hr>
+            <p id="p">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat officia sit maxime, dolorum ullam
+                soluta excepturi eius aliquam nihil doloribus perspiciatis unde quia inventore voluptate, dolore vitae,
+                et dolor vel. <img class='limited' src="karacsony.jpg" alt="karácsnyony gergly"> Lorem ipsum dolor sit
+                amet consectetur, adipisicing elit. Aperiam fugit corrupti necessitatibus dicta perspiciatis quis quae,
+                expedita dolore corporis vitae provident unde distinctio sed numquam? Aspernatur nostrum reprehenderit
+                ut rem.
+            </p>
+        </main>
+        <aside>
+
+        </aside>
+    </div>
     <br>
     <hr>
     <footer>
@@ -55,10 +65,10 @@
         let element = document.getElementById("spacer");
         let touchB = false;
 
-        if(localStorage.getItem("isLightMode") == "1"){
-                console.log("i hate this");
-                document.getElementById('theme').setAttribute('href', 'light.css');
-            }
+        if (localStorage.getItem("isLightMode") == "1") {
+            console.log("i hate this");
+            document.getElementById('theme').setAttribute('href', 'light.css');
+        }
 
         if ((/Android|iPhone/i.test(navigator.userAgent))) {
             element.parentNode.removeChild(element);
